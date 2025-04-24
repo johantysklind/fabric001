@@ -1,0 +1,20 @@
+model Model
+	culture: en-US
+	defaultPowerBIDataSourceVersion: powerBI_V3
+	sourceQueryCulture: sv-SE
+	dataAccessOptions
+		legacyRedirects
+		returnErrorValuesAsNull
+
+annotation PBI_QueryOrder = ["diabetes"]
+
+annotation __PBI_TimeIntelligenceEnabled = 1
+
+annotation PBIDesktopVersion = 2.142.884.0 (25.04)+8f0120a9395763f5407b19609ac0a9711107b492
+
+annotation PBI_ProTooling = ["DevMode"]
+
+ref table diabetes
+
+ref cultureInfo en-US
+

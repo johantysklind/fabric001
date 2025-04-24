@@ -1,0 +1,130 @@
+table diabetes
+	lineageTag: 663ea69a-d9c2-4f77-a4e4-584e3084cc3f
+
+	column AGE
+		dataType: int64
+		formatString: 0
+		sourceProviderType: bigint
+		lineageTag: 9a79fc85-0fe9-4e4e-b87c-4ad81d91c4cb
+		summarizeBy: sum
+		sourceColumn: AGE
+
+		annotation SummarizationSetBy = Automatic
+
+	column SEX
+		dataType: int64
+		formatString: 0
+		sourceProviderType: bigint
+		lineageTag: af3bc045-eb01-4fc2-9295-d4a75c16769d
+		summarizeBy: sum
+		sourceColumn: SEX
+
+		annotation SummarizationSetBy = Automatic
+
+	column BMI
+		dataType: double
+		sourceProviderType: float
+		lineageTag: a7f4b6ac-605a-4a40-b27b-9eca02540582
+		summarizeBy: sum
+		sourceColumn: BMI
+
+		annotation SummarizationSetBy = Automatic
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+	column BP
+		dataType: double
+		sourceProviderType: float
+		lineageTag: db300874-9c6e-4adc-8288-0afa612e91d0
+		summarizeBy: sum
+		sourceColumn: BP
+
+		annotation SummarizationSetBy = Automatic
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+	column S1
+		dataType: int64
+		formatString: 0
+		sourceProviderType: bigint
+		lineageTag: 5e3b7246-7d86-4b64-8ebe-e1c6981751c3
+		summarizeBy: sum
+		sourceColumn: S1
+
+		annotation SummarizationSetBy = Automatic
+
+	column S2
+		dataType: double
+		sourceProviderType: float
+		lineageTag: ff654686-73cb-40b0-9c01-8a96b3c2d378
+		summarizeBy: sum
+		sourceColumn: S2
+
+		annotation SummarizationSetBy = Automatic
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+	column S3
+		dataType: double
+		sourceProviderType: float
+		lineageTag: 02451e94-130d-4e2a-9d74-3195fdae8133
+		summarizeBy: sum
+		sourceColumn: S3
+
+		annotation SummarizationSetBy = Automatic
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+	column S4
+		dataType: double
+		sourceProviderType: float
+		lineageTag: 3a5e2a5a-9c02-4b4b-8fa6-7efb434d9c7e
+		summarizeBy: sum
+		sourceColumn: S4
+
+		annotation SummarizationSetBy = Automatic
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+	column S5
+		dataType: double
+		sourceProviderType: float
+		lineageTag: 53a1c3b0-5d82-44a1-8980-1dad8a999421
+		summarizeBy: sum
+		sourceColumn: S5
+
+		annotation SummarizationSetBy = Automatic
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+	column S6
+		dataType: int64
+		formatString: 0
+		sourceProviderType: bigint
+		lineageTag: 0558aac6-91f2-4272-989b-437fb9e6f516
+		summarizeBy: sum
+		sourceColumn: S6
+
+		annotation SummarizationSetBy = Automatic
+
+	column Y
+		dataType: int64
+		formatString: 0
+		sourceProviderType: bigint
+		lineageTag: 7dd70fb6-debd-4f92-ae8b-f2e77803773d
+		summarizeBy: sum
+		sourceColumn: Y
+
+		annotation SummarizationSetBy = Automatic
+
+	partition diabetes = m
+		mode: directQuery
+		source =
+				let
+				    Source = Sql.Database("f6qs4cfj7zxepbwimibjxcyad4-7zmzdbkwluhutnw7bq52vx23mm.datawarehouse.fabric.microsoft.com", "Lakehose"),
+				    dbo_diabetes = Source{[Schema="dbo",Item="diabetes"]}[Data]
+				in
+				    dbo_diabetes
+
+	annotation PBI_ResultType = Table
+
